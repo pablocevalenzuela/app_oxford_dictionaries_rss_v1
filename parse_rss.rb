@@ -5,9 +5,7 @@ require 'open-uri'
   URI.open(url) do |rss|
     feed = RSS::Parser.parse(rss)
         puts "Author: #{ feed.author.name }"        
-    
     feed.items.each do |word|
         puts "Word: #{ word.title }"
     end
-
   end
